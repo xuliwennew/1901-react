@@ -21,26 +21,20 @@
 <script type="text/babel">
     (function () {
 
-        //all in javascript
+         function login(){
+            //localstorage
+            let user = localStorage.getItem("user")
 
-        //model
-        let data = "hello world!"
+            if(user){
+                return <h1>欢迎 xxx</h1>
+            }
 
-        //jsx  xml扩展语法，js中使用类标签的写法
-        //jsx  是用一种可视化的方式来写view
-        //view
-        let hello = <h1>
-            {data}
-        </h1>
+            return <h1>没有登录!</h1>
 
-        //jsx -> vnode
-        //直接vnode写view
-        let world=  React.createElement("h1",null,"hello vnode ")
+        }
 
-        console.log(hello)
-        console.log(world)
 
-        ReactDOM.render(hello,document.querySelector("#app"))
+        ReactDOM.render(login(),document.querySelector("#app"))
 
     })()
 </script>

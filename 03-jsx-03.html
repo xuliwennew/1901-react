@@ -9,9 +9,12 @@
 </head>
 <body>
 
-<div id="app"></div>
+<div id="app"  >
 
 
+</div>
+
+tabindex
 
 <!--react.js 核心库 react-dom 编译器  react component - compiler -dom -->
 <!--react 15.6 源代码都是es6 -->
@@ -21,26 +24,30 @@
 <script type="text/babel">
     (function () {
 
-        //all in javascript
+        //内部样式 style
+        /**
+         * .loging { .title {}}
+         *
+         */
+        let login = {
+            title:{
+                color:"red"
+            }
+        }
 
-        //model
-        let data = "hello world!"
+        //合法react element 必须是一个闭合
+        //vnode props 不能使用 js 关键字
+        //如果是两个单词，不能使用小写
+        let loginPage = (
+            <div>
+               <h1 tabIndex="1" xxcc="1" helloworld="1" className="hello" style={login.title}>
+                登录
+               </h1>
+            <hr />
+        </div>)
 
-        //jsx  xml扩展语法，js中使用类标签的写法
-        //jsx  是用一种可视化的方式来写view
-        //view
-        let hello = <h1>
-            {data}
-        </h1>
 
-        //jsx -> vnode
-        //直接vnode写view
-        let world=  React.createElement("h1",null,"hello vnode ")
-
-        console.log(hello)
-        console.log(world)
-
-        ReactDOM.render(hello,document.querySelector("#app"))
+        ReactDOM.render(loginPage,document.querySelector("#app"))
 
     })()
 </script>
