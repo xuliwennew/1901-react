@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app"  >
+
+
+</div>
+
+
+
+<!--react.js 核心库 react-dom 编译器  react component - compiler -dom -->
+<!--react 15.6 源代码都是es6 -->
+<script src="bower_components/react/babel-browser.js"></script>
+<script src="bower_components/react/react.development.js"></script>
+<script src="bower_components/react/react-dom.development.js"></script>
+<script type="text/babel">
+    (function () {
+
+        //react中的组件名，首字母大写
+        //必须有返回值 : 返回值类型 string null valid react elements
+
+        // array 16.8 <Fragment>
+         function Hello(props) {
+             return [
+                 <h1 key={1}>hello world</h1>,
+                 <h1 key="2">hello world</h1>
+             ]
+         }
+
+         //使用lamda
+        let World = (props)=>{
+             return "world component"
+        }
+
+        //es6类组件 组件必须包含view
+        class Hi extends React.Component{
+
+             //视图的定义 ，vnode-> real dom
+             render(){
+                 return <World/>
+             }
+        }
+
+        //4.single page component  .jsx .js  webpack babel
+
+         // react elemnts(vnode) | component
+         ReactDOM.render(<Hi/>,document.querySelector("#app"))
+    })()
+</script>
+</body>
+</html>
