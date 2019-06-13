@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app"  >
+
+
+</div>
+
+
+
+<!--react.js 核心库 react-dom 编译器  react component - compiler -dom -->
+<!--react 15.6 源代码都是es6 -->
+<script src="bower_components/react/babel-browser.js"></script>
+<script src="bower_components/react/react.development.js"></script>
+<script src="bower_components/react/react-dom.development.js"></script>
+<script type="text/babel">
+    (function () {
+
+         class Hello extends React.Component {
+
+             //如果给一个组件添加一个状态值 state
+             constructor(props) {
+                 super(props);
+
+                 //初始化组件的状态
+                 //当状态中的值发生变化，组件的更新render
+                 this.state = {
+                     msg:"hello world"
+                 }
+             }
+
+
+             render() {
+                 return (
+                     <div>
+                         {this.state.msg}
+                     </div>
+                 );
+             }
+         }
+
+
+         ReactDOM.render(<Hello/>,document.querySelector("#app"))
+    })()
+</script>
+</body>
+</html>
