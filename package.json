@@ -26,9 +26,11 @@
     "webpack-cli": "^3.3.4"
   },
   "dependencies": {
+    "better-scroll": "^1.15.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "swiper": "^4.5.0",
     "vue": "^2.6.10"
   }
 }

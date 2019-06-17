@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.css">
+</head>
+<body>
+
+<div id="app"  >
+
+
+</div>
+
+
+
+<!--react.js 核心库 react-dom 编译器  react component - compiler -dom -->
+<!--react 15.6 源代码都是es6 -->
+<script src="node_modules/swiper/dist/js/swiper.js"></script>
+<script src="bower_components/react/babel-browser.js"></script>
+<script src="bower_components/react/react.development.js"></script>
+<script src="bower_components/react/react-dom.development.js"></script>
+<script type="text/babel">
+    (function () {
+
+        class World extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    num:0
+                }
+
+                this.update = this.update.bind(this)
+            }
+
+            update(){
+                let {num} = this.state;
+                this.setState({
+                    num:++num
+                })
+            }
+
+
+            render(){
+                return <div>
+                    <h1 > world component: {this.state.num}</h1>
+                </div>
+            }
+
+            change(){
+                //document
+                console.log(this.refs)
+                this.refs.h.style.color = "red"
+            }
+        }
+
+        class Hello extends React.Component{
+            constructor(props) {
+                super(props);
+                this.change = this.change.bind(this)
+                this.update = this.update.bind(this)
+            }
+
+
+            update(){
+                this.refs.w.update()
+            }
+
+
+            //let w = new World() w.update()
+            render(){
+                return <div>
+                    <h1 ref="h">hello world</h1>
+                    <button onClick={this.change}>change h1</button>
+                    <World ref="w"/>
+                    <button onClick={this.update}>更改子组件中的stateNum</button>
+                </div>
+            }
+
+            change(){
+                //document
+                 console.log(this.refs)
+                this.refs.h.style.color = "red"
+            }
+        }
+
+        ReactDOM.render(<Hello/>,document.querySelector("#app"))
+
+    })()
+</script>
+</body>
+</html>

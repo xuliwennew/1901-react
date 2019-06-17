@@ -24,7 +24,10 @@
 <script type="text/babel">
     (function () {
 
-         class Counter extends React.Component {
+        /**
+         * PureComponent内置shouldComponentUpdate方法，比较两个的状态是否一样，不一样才更新
+         */
+         class Counter extends React.PureComponent {
 
              //如果给一个组件添加一个状态值 state
              constructor(props) {
@@ -67,21 +70,7 @@
                  console.log("#4 componentDidMount")
              }
 
-             //是否需要更新页面 render ,开关
-             //性能的处理，判断是否需要更新的组件
-             shouldComponentUpdate(nextProps,nextState){
-                 console.log("#5 shouldComponentUpdate")
-                 //新的状态 nextstate
-                 console.log(nextState)
-                 //旧的状态 this.state
-                 console.log(this.state)
 
-                 if(nextState.num !=this.state.num){
-                     return true
-                 }
-
-                 return false;
-             }
 
              componentWillUpdate(){
                  console.log("#6 componentWillUpdate")

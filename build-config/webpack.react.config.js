@@ -8,7 +8,7 @@ module.exports = {
     },
     output:{
         path:path.resolve(__dirname,"../single-component"),
-        filename:"app.bundle.js"
+        filename:"context.bundle.js"
     },
     resolve: {
         extensions: [".css",".js",".jsx"]
