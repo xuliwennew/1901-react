@@ -4,11 +4,11 @@ const path = require("path")
 module.exports = {
     mode:"development",
     entry:{
-        app:path.resolve(__dirname,"../single-component/main.js")
+        app:path.resolve(__dirname,"../jd-webapp/main.js")
     },
     output:{
-        path:path.resolve(__dirname,"../single-component"),
-        filename:"context.bundle.js"
+        path:path.resolve(__dirname,"../jd-webapp"),
+        filename:"app.bundle.js"
     },
     resolve: {
         extensions: [".css",".js",".jsx"]
@@ -31,6 +31,14 @@ module.exports = {
                     "presets": ["@babel/preset-env","@babel/preset-react"],
                     "plugins" :["@babel/plugin-transform-react-jsx"]
                 }
+            },
+            {
+                test:/\.css$/,
+                loader:"style-loader!css-loader"
+            },
+            {
+                test:/\.(png|jpg|gif|webp)$/,
+                loader:"url-loader"
             }
         ]
     }
