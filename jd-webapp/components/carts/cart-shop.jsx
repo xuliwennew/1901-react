@@ -35,10 +35,10 @@ export default class CartShop extends Component{
                     <span>编辑</span>
                 </div>
             </div>
-            <CartShopProductList pCheck={this.props.pCheck}  data={data.products} sid={sid}/>
+            <CartShopProductList add={this.props.add} minus={this.props.minus} pCheck={this.props.pCheck}  data={data.products} sid={sid}/>
             <div className="shopPrice">
                 本店总计：
-                ￥<span className="shop-total-amount ShopTotal">16000</span>
+                ￥<span className="shop-total-amount ShopTotal">1</span>
             </div>
         </div>;
     }

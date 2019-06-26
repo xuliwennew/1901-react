@@ -9,11 +9,23 @@ export default class CartShopProduct extends Component{
     constructor(props) {
         super(props);
         this.productCheck = this.productCheck.bind(this)
+        this.minusNum = this.minusNum.bind(this)
+        this.addNum = this.addNum.bind(this)
     }
 
     productCheck(){
         let { pid, sid ,data,pCheck} = this.props;
         pCheck(sid,pid)
+    }
+
+    minusNum(){
+        let {pid, sid ,minus} = this.props;
+        minus(sid,pid)
+    }
+
+    addNum(){
+        let {pid, sid ,add} = this.props;
+        add(sid,pid)
     }
 
     render() {
@@ -45,9 +57,9 @@ export default class CartShopProduct extends Component{
                             ￥<b className="price">{data.price}</b>
                         </div>
                         <div className="shop-arithmetic">
-                            <a className="minus">-</a>
+                            <a className="minus" onClick={this.minusNum}>-</a>
                             <span className="num">{data.num}</span>
-                            <a className="plus">+</a>
+                            <a className="plus" onClick={this.addNum}>+</a>
                         </div>
                     </div>
                 </div>

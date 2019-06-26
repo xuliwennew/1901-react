@@ -1,0 +1,91 @@
+react-router
+redux
+typescript + angular8
+
+1806 angular1x
+
+ 接口
+
+ carts
+ user
+ shop
+ product
+
+ user
+ shop
+ product
+ -> cartinfo
+
+ restful api  graphql 图式编程接口
+
+ react component
+ react router
+
+1.安装 npm install react-router-dom
+  react-router-dom    browser
+  react-router-native android/ios
+
+  react-router 2x
+  react-router 3x
+  查询baidu google + 看文档
+
+  react vue react dva nervjs preact.js
+
+
+
+Vue router vs React router SPA
+1, npm install vue-router -S
+2. main.js Vue.use(VueRouter)
+3. 配置一个路由规则的模块router.js
+   new VueRouter( { routes:[{},{}]})
+4. 把这个router.js 注册到Viewmodel new Vue({router}) $router(导航) $route(获取路由的信息)
+5. App.vue 添加一个路由的插槽 router-view
+
+
+React-router 的使用步骤
+1.npm install react-router-dom -S
+2.App.jsx 添加一个路由的组件就可以了
+  BrowserRouter / VueRouter
+  </BrowserRouter> / new BrowserRouter()
+  <Route path="" component="" /> routes:[{}]
+  <Link/> router-link tag="p"
+
+
+cnpm npm yarn
+
+index.html
+carts
+
+redux  react vue
+
+redux === vuex
+
+vuex == redux
+
+Vuex  饭店 公共状态管理容器(one-way) 基于事件模式，observer
+核心概念:
+1, store 用来管理共享的状态的地方
+2, state 共享的状态(state中的状态是响应式的)
+3, mutations 事件处理中心 负责修改共享状态，并返回的新的状态
+4, actions 事件注册中心 负责接收动作请求，提交到mutations处理
+5, getters 事件注册中心 用来获取最新的状态
+6, module 模块化管理
+component-distpatch({action:xx})->store/actions->commit->mutations->state->getters->redner component
+
+redux = reduce flux(mvc)  简化的flux
+
+redux 小摊 管理公共的状态 用来管理组件化系统中的公有状态
+react-redux vuex(redux)
+1, store 管理共享的状态
+2, state 共享的状态列表
+3. middleware 中间件，可以通过自定义 middleware 来模拟vuex mutations actions,getters
+4, reducer = mutations+actions+getters  表示一个修改状态的规则
+
+使用redux的4四步 redux-saga
+1, 安装 npm install redux react-redux -S
+2. 1，定义需要管理共享状态state 2.定义store管理的规则 reducer
+3, 根据状态state和规则reducer来创建一个store : createStore -> store  用来管理共享的状态
+
+
+
+

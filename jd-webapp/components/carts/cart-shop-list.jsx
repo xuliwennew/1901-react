@@ -14,12 +14,13 @@ export default class CartShopList extends Component{
             return ( <div className="shopping">
                 {
                     this.props.data.shops.map((shop,key)=>{
-                        return <CartShop pCheck={this.props.pCheck} sCheck={this.props.sCheck} data={shop} sid={key} key={key}/>
+                        return <CartShop add={this.props.add} minus={this.props.minus}  pCheck={this.props.pCheck} sCheck={this.props.sCheck} data={shop} sid={key} key={key}/>
                     })
                 }
             </div>)
         }
         return <Loading/>
+
 
     }
 }

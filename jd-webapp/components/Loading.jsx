@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "./load.css"
 
 
 
@@ -6,7 +7,14 @@ export default class Loading extends Component{
 
 
     render() {
-        return <h1 style={{color:"red"}}>loading.....</h1> ;
+        return <div className="loading">
+            <div className="dot white"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+        </div>
+
     }
 }
 

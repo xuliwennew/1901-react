@@ -3,10 +3,9 @@ const path = require("path")
 
 module.exports = {
     mode:"development",
-    entry:[
-        "@babel/polyfill",
-         path.resolve(__dirname,"../jd-webapp/main.js")
-    ],
+    entry:{
+        app:path.resolve(__dirname,"../jd-webapp/main.js")
+    },
     output:{
         path:path.resolve(__dirname,"../jd-webapp"),
         filename:"app.bundle.js"

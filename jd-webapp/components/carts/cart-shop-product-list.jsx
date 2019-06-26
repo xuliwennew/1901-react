@@ -16,7 +16,7 @@ export default class CartShopProductList extends Component{
             return <ul>
                 {
                     data.map((product,key)=>{
-                        return <CartShopProduct pCheck={this.props.pCheck}  key={key} data={product} pid={key} sid={sid}/>
+                        return <CartShopProduct add={this.props.add} minus={this.props.minus} pCheck={this.props.pCheck}  key={key} data={product} pid={key} sid={sid}/>
                     })
                 }
             </ul>;
