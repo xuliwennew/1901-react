@@ -88,4 +88,17 @@ react-redux vuex(redux)
 
 
 
+react-redux middleware
+
+npm install react-redux redux  -S
+
+
+container 模式 ：
+
+复用组件的view
+
+react all in js  view
+
+
+智能  container 木偶 props
 

@@ -1,9 +1,11 @@
 import React, {Component} from "react"
-import Carts from "./pages/carts"
+import CartsContainer from "./pages/carts"
 import Products from "./pages/products"
 import ProductDetail from "./pages/product-detail"
 import {BrowserRouter as Router ,Route,Link} from "react-router-dom"
-import Counter from "./pages/Counter"
+import CounterContainer from "./pages/Counter"
+import {Provider} from "react-redux"
+import store from "./store"
 
 /**
  * 1.npm install react-router-dom -S
@@ -22,14 +24,16 @@ export default class App extends Component{
     // <BrowserRouter/>
 
     render() {
-        //html5 history api  hashbang
-        return <Router>
-            <Link to={"/c"}>首页</Link>||||<Link to={"/carts"}>购物车</Link>
-            <Route path="/" exact={true}  component={Products}/>
-            <Route path="/carts" component={Carts}/>
-            <Route path="/detail/:id" component={ProductDetail} />
-            <Route path="/c" component={Counter} />
-        </Router>;
+        //html5 history api  hashbang react
+        return <Provider store={store}>
+            <Router>
+                <Link to={"/c"}>首页</Link>||||<Link to={"/carts"}>购物车</Link>
+                <Route path="/" exact={true}  component={Products}/>
+                <Route path="/carts" component={CartsContainer}/>
+                <Route path="/detail/:id" component={ProductDetail} />
+                <Route path="/c" component={CounterContainer} />
+            </Router>
+        </Provider>
     }
 }
 
