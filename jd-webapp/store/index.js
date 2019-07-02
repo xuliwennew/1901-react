@@ -16,6 +16,6 @@ const rootReducer = combineReducers({
 })
 
 //step3 根据initalState 和 reducer 来创建一个store
-let store = createStore(rootReducer,applyMiddleware(thunk,fetchMiddleWare))
+let store = createStore(rootReducer,applyMiddleware(fetchMiddleWare))
 
 export default store

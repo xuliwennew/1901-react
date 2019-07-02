@@ -14,6 +14,7 @@ class Carts extends Component {
 
     componentWillMount(){
         this.props.INIT()
+
     }
 
     render() {
@@ -24,7 +25,8 @@ class Carts extends Component {
             minusNum,
             productSingleCheck,
             shopCheckAll,
-            shopCartCheckAll
+            shopCartCheckAll,
+            COUNT
         } = this.props;
 
         return <Fragment>
@@ -35,14 +37,14 @@ class Carts extends Component {
                 pCheck={productSingleCheck}
                 sCheck={shopCheckAll}
                 data={cartInfo}/>
-            <CartFooter cCheck={shopCartCheckAll} data={cartInfo}/>
+            <CartFooter cCheck={shopCartCheckAll} data={cartInfo}  />
         </Fragment>;
     }
 }
 
 let mapStateToProps = (state)=>{
     return {
-       cartInfo: state.cartReducer.cartInfo
+       cartInfo:Object.assign({},state,state.cartReducer.cartInfo)
     }
 }
 
@@ -50,8 +52,8 @@ let mapStateToProps = (state)=>{
 let mapDispatchToProps = (dispatch)=>{
     return {
         INIT:()=> dispatch({type:"INIT"}) ,
-        addNum : ()=>dispatch({type:"addNum"}),
-        minusNum : ()=>dispatch({type:"minusNum"}),
+        addNum : (sid, pid)=>dispatch({type:"addNum",p:{sid,pid}}),
+        minusNum : (sid, pid)=>dispatch({type:"minusNum",p:{sid,pid}}),
         productSingleCheck : ()=>dispatch({type:"productSingleCheck"}),
         shopCheckAll : ()=>dispatch({type:"shopCheckAll"}),
         shopCartCheckAll : ()=>dispatch({type:"shopCartCheckAll"})

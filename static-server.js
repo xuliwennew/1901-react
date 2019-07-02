@@ -8,6 +8,6 @@ app.use(history());
 app.use(express.static(path.join(__dirname,"./jd-webapp")))
 
 
-app.listen(3000,()=>{
-    console.log("react server is ready on port 3000")
+app.listen(80,()=>{
+    console.log("react server is ready on port 80")
 })

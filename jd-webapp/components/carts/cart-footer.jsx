@@ -12,6 +12,8 @@ export default class CartFooter extends Component{
         this.cCheckAll = this.cCheckAll.bind(this)
     }
 
+
+
     cCheckAll(){
         console.log(1)
         let {  cCheck} = this.props;
@@ -22,6 +24,7 @@ export default class CartFooter extends Component{
     render() {
 
         let { data } = this.props;
+        console.log(data)
         return <div className="payment-bar">
             <div className="all-checkbox">
                 <input type="checkbox"
